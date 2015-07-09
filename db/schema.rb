@@ -11,7 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709215640) do
+ActiveRecord::Schema.define(version: 20150709222544) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.integer  "venue_id"
+    t.integer  "venue_rep_id"
+    t.integer  "visual_artist_id"
+    t.integer  "musician_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "event_name"
+    t.text     "event_desc"
+    t.datetime "event_start"
+    t.integer  "user_id"
+    t.integer  "venue_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "musicians", force: :cascade do |t|
+    t.string   "instrument"
+    t.string   "genre"
+    t.integer  "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "bio"
+    t.string   "phone_number"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,5 +73,26 @@ ActiveRecord::Schema.define(version: 20150709215640) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "venue_reps", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "event_id"
+    t.integer  "venue_rep_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "visual_artists", force: :cascade do |t|
+    t.string   "medium"
+    t.integer  "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
