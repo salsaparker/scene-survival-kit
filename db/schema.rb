@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709215914) do
+ActiveRecord::Schema.define(version: 20150709222544) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.integer  "venue_id"
+    t.integer  "venue_rep_id"
+    t.integer  "visual_artist_id"
+    t.integer  "musician_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "event_name"
@@ -63,6 +78,14 @@ ActiveRecord::Schema.define(version: 20150709215914) do
     t.integer  "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "event_id"
+    t.integer  "venue_rep_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "visual_artists", force: :cascade do |t|
