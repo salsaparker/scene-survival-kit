@@ -1,7 +1,8 @@
 class VenuesController < ApplicationController
+before_action :authenticate_user!
 before_action :find_venue, only: [:edit, :update, :show, :destroy]
   def index
-    @venues = Venue.all 
+    @venues = Venue.all
   end #index end
 
   def new
@@ -19,7 +20,7 @@ before_action :find_venue, only: [:edit, :update, :show, :destroy]
   end #create end
 
   def edit
-    
+
   end #edit end
 
   def update
@@ -33,7 +34,7 @@ before_action :find_venue, only: [:edit, :update, :show, :destroy]
   end #update end
 
   def show
-    
+
   end #show
 
   def destroy

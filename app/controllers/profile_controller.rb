@@ -28,7 +28,7 @@ class ProfileController < ApplicationController
 
   def update
   if @profile.update(profile_params)
-    redirect_to profile_path
+    redirect_to profile_path(@profile.id)
   else
     render :edit
     flash[:error] = "Somthing went wrong, please refresh and try again"

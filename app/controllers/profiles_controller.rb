@@ -12,7 +12,7 @@ before_action :find_profile, only: [:edit, :update, :show, :destroy]
   def new
 		@profile = Profile.new
   end
-	
+
 	def create
 		if @profile.save(profile_params)
 			flash[:notice] = "Profile created!"
@@ -47,7 +47,7 @@ private
 	end
 
 	def profile_params
-		params.require(:profile).permit(:name, :bio, :phone_number, :user_id, 
+		params.require(:profile).permit(:name, :bio, :phone_number, :user_id,
 		:created_at, :updated_at)
 	end
 
