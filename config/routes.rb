@@ -1,16 +1,23 @@
 Rails.application.routes.draw do
 
-
  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'events#index'
   resources :addresses
   resources :events
   resources :musicians
+  resources :profiles
 
+ #  get 'profiles/index'
+
+ #  get 'profiles/new'
+
+ #  get 'profiles/edit'
+
+ #  get 'profiles/show'
 
   # get 'musicians/index'
 
