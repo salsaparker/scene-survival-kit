@@ -1,5 +1,5 @@
 class ProfileController < ApplicationController
-  before_action :authenticate_member!
+  before_action :authenticate_user!
   before_action :find_by, only:[:edit, :show, :update, :destroy]
   belongs_to :user
   has_one :musician
@@ -9,7 +9,6 @@ class ProfileController < ApplicationController
   def index
     @profile = Profile.all
   end
-
 
   def new
     @profile = Profile.new
@@ -28,11 +27,18 @@ class ProfileController < ApplicationController
   end
 
   def update
-    @profile.update
+  if @profile.update(profile_params)
+    redirect_to profile_path
+  else
+    render :edit
+    flash[:error] = "Somthing went wrong, please refresh and try again"
+    end
   end
 
   def destroy
     @profile.destroy
+    redirect_to new_profile_path
+    flash[:notice] = "Profile successfully removed"
   end
 
   private
