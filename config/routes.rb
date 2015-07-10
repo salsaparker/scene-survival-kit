@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -10,6 +11,15 @@ Rails.application.routes.draw do
   resources :events
   resources :musicians
   resources :profiles
+  resources :venue_reps
+
+  # get 'venue_reps/index'
+
+  # get 'venue_reps/new'
+
+  # get 'venue_reps/show'
+
+  # get 'venue_reps/edit'
 
  #  get 'profiles/index'
 
