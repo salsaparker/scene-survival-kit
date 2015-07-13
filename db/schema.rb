@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710222405) do
+ActiveRecord::Schema.define(version: 20150713031220) do
 
   create_table "addresses", force: :cascade do |t|
     t.float    "latitude"
@@ -31,11 +31,12 @@ ActiveRecord::Schema.define(version: 20150710222405) do
   create_table "events", force: :cascade do |t|
     t.string   "event_name"
     t.text     "event_desc"
-    t.datetime "event_start"
     t.integer  "user_id"
     t.integer  "venue_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "start_time"
+    t.date     "event_date"
   end
 
   create_table "musicians", force: :cascade do |t|
