@@ -17,10 +17,11 @@
 </head>
 
 <body>
-
-  <main role="main">
+  
+<header>
     <%= render 'layouts/messages' %>
-  </main>
+</header>
+
     <% if user_signed_in? %>
         <%= render 'layouts/logged_in'%>
     <% else %>
