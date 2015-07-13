@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
   <title>SceneSurvivalKit</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'jquery.js' %>
   <%= csrf_meta_tags %>
+
+  <link href="css/sb-admin.css" rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <%= render 'layouts/navigation' %>
-  </header>
+
   <main role="main">
-   <%= render 'layouts/messages' %>
-   <%= yield %>
+    <%= render 'layouts/messages' %>
   </main>
+    <% if user_signed_in? %>
+        <%= render 'layouts/logged_in'%>
+    <% else %>
+        <%= render 'layouts/home'%>
+    <% end %>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
 <%= yield %>
 

@@ -1,9 +1,10 @@
 class ProfilesController < ApplicationController
 
+# before_action :authenticate_user!
 before_action :find_profile, only: [:edit, :update, :show, :destroy]
 
   def index
-		@profiles = Profiles.all
+		@profiles = Profile.all
   end
 
   def show
@@ -14,12 +15,14 @@ before_action :find_profile, only: [:edit, :update, :show, :destroy]
   end
 
 	def create
-		if @profile.save(profile_params)
-			flash[:notice] = "Profile created!"
-			redirect_to profiles_path
+		@profile = Profile.new(profile_params)
+		if @profile.save
+ 			flash[:notice] = "Profile created!"
+			redirect_to profile_path(@profile.id)
 		else
 		 	flash[:alert] = "Something went wrong. Please try again."
 			render :new
+		end
 	end
 
   def edit
@@ -47,8 +50,9 @@ private
 	end
 
 	def profile_params
-		params.require(:profile).permit(:name, :bio, :phone_number, :user_id,
-		:created_at, :updated_at)
+		params.require(:profile).permit(:image, :name, :bio, :phone_number, :user_id, :created_at, :updated_at)
 	end
 
 end
+
+# :image_file_name, :image_content_type, :image_file_size,
