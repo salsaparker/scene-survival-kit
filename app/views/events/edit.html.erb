@@ -1,2 +1,20 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+<h1>Edit Event</h1>
+<%= form_for @event, html: {multipart: true} do |f| %>
+	<%= f.label(:event_name)%> 
+	<%= f.text_field(:event_name)%>
+	<br/>
+	<%= f.label(:event_start)%>
+	<%= f.date_select(:event_start)%>
+	<br/>
+	<%= f.label(:event_desc)%>
+	<%= f.text_area(:event_desc)%>
+	<br/>
+	<%= f.label(:user_id)%>
+	<%= f.text_area(:user_id)%>
+	<br/>
+	<%= f.label(:venue_id)%>
+	<%= f.date_select(:venue_id)%>
+	<br/>
+	<br/>
+	<%= f.submit("Submit")%>
+<%end%>
