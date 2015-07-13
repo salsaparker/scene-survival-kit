@@ -1,2 +1,30 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
+<script type="text/javascript" src="js/jquery.plugin.js"></script> 
+<script type="text/javascript" src="js/jquery.datepick.js"></script>
+
+<h1>New Event</h1>
+
+<%= form_for @event, html: {multipart: true} do |f| %>
+	<%= f.label(:event_name)%> 
+	<%= f.text_field(:event_name)%>
+	<br/>
+		<%= f.label(:event_date)%>
+	<%= f.date_select(:event_date)%>
+	<br/>
+	<%= f.label(:start_time)%>
+	<%= f.text_field(:start_time)%>
+	</br>
+	<%= f.label(:event_desc)%>
+	<%= f.text_area(:event_desc)%>
+	<br/>
+	<%= f.label(:user_id)%>
+	<%= f.text_field(:user_id)%>
+	<br/>
+	<%= f.label(:venue_id)%>
+	<%= f.text_field(:venue_id)%>
+	<br/>
+
+	<%= f.submit("Submit")%>
+<%end%>
