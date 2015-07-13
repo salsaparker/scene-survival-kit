@@ -4,6 +4,8 @@ before_action :find_event, only: [:edit, :update, :show, :destroy]
 
   def index
 		@events = Event.all
+		@events_by_date = @events.group_by(&:event_date)
+		@date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
   def show
@@ -50,7 +52,7 @@ private
 	end
 
 	def event_params
-		params.require(:event).permit(:event_name, :event_desc, :event_start,
+		params.require(:event).permit(:event_name, :event_desc, :event_date, :stsart_time,
 		:user_id, :venue_id, :created_at, :updated_at)
 	end
 
