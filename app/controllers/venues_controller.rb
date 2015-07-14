@@ -1,5 +1,8 @@
 class VenuesController < ApplicationController
-before_action :find_venue, only: [:edit, :update, :show, :destroy]
+
+  # before_action :authenticate_user!
+  before_action :find_venue, only: [:edit, :update, :show, :destroy]
+
   def index
     @venues = Venue.all 
   end #index end
@@ -43,7 +46,7 @@ before_action :find_venue, only: [:edit, :update, :show, :destroy]
   private
 
   def find_venue
-    @venue = Venue.find_by(id: params[:id])
+    @venue = Venue.find_by_id(params[:id])
   end
 
   def venue_params

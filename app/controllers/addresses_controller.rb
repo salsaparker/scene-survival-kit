@@ -1,6 +1,7 @@
 class AddressesController < ApplicationController
 
-before_action :find_address, only: [:edit, :show, :update, :destroy]
+	# before_action :authenticate_user!
+	before_action :find_address, only: [:edit, :show, :update, :destroy]
   
 	def index
 		@addresses = Address.all
@@ -45,7 +46,7 @@ before_action :find_address, only: [:edit, :show, :update, :destroy]
 private
 
 	def find_address
-		@address = Address.find(params[:id])
+		@address = Address.find_by_id(params[:id])
 	end
 
 	def address_params

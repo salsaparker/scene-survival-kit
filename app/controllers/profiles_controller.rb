@@ -46,7 +46,7 @@ before_action :find_profile, only: [:edit, :update, :show, :destroy]
 private
 
 	def find_profile
-		@profile = Profile.find(params[:id])
+		@profile = Profile.find_by_id(params[:id])
 	end
 
 	def profile_params
