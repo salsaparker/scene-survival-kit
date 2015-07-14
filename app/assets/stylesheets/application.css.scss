@@ -1,11 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "sb-admin";
-
-#error_explanation {
-  @extend .alert;
-  @extend .alert-danger;
-}
-#error_explanation h2 {
-  font-size: 16px;
-}
+@import "logged_in";
+@import "creative";
+@import "animate.min";

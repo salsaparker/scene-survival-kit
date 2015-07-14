@@ -55,7 +55,7 @@ section {
 .authform fieldset {
   @extend .well;
 }
-#error_explanation:not(:empty) {
+#error_explanation {
   @extend .alert;
   @extend .alert-danger;
 }
