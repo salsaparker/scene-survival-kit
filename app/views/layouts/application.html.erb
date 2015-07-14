@@ -28,9 +28,10 @@
     <% if user_signed_in? %>
         <%= render 'layouts/logged_in'%>
     <% else %>
+        <%= render 'layouts/visitor'%>
     <% end %>
 
-<%= yield %>
+  <%= yield %>
   <%= javascript_include_tag 'application' %>
     <script src="/assets/cbpAnimatedHeader.js"></script>
     <script src="/assets/jquery.easing.min.js"></script>
