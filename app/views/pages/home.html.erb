@@ -20,10 +20,10 @@
                         <a class="page-scroll" href="#about">Our Mission</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Events</a>
+                        <a class="page-scroll" href="#services">Services</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Features</a>
+                        <a class="page-scroll" href="#musicians">Featured Musicians</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Founders</a>
@@ -38,9 +38,9 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Find The Resources You Need in the Scene.</h1>
+                <h1>Find The Resources You Need to Survive the Scene.</h1>
                 <hr>
-                <p>Connect with musicians, venues, and visual artists for your show.</p>
+                <p>Connect with musicians, venues, or visual artists for your show.</p>
                 <%= link_to("Sign Up", new_user_registration_path, class: "btn btn-primary btn-xl page-scroll")%>
             </div>
         </div>
@@ -50,81 +50,62 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
-                    <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#" class="btn btn-default btn-xl">Get Started!</a>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
-                    </div>
+                    <h2 class="section-heading">To Support and Connect Artists</h2>
+                    <hr>
+                    <p class="text-faded"> [Scene Survival Kit] aims to provide a resource for musicians to connect with venues and visual artists, thus spuring mutual promotion, and provide a social platform for the music community.</p>
+                    <!-- <a href="#" class="btn btn-default btn-xl">Get Started!</a> -->
                 </div>
             </div>
         </div>
     </section>
 
     <section id="services">
-        <!-- CALENDAR START -->
-        <div id="events">
-          <h2 id="month">
-                <%= link_to "<", date: @date.prev_month %>
-                <%= @date.strftime("%B %Y") %>
-                <%= link_to ">", date: @date.next_month %>
-            </h2>
-            
-            <%= calendar @date do |date| %>
-                <%= date.day %>
-              <% if @events_by_date[date] %>
-                    <ul>
-                        <% @events_by_date[date].each do |event| %>
-                            <li><%= link_to event.event_name, event %></li>
-                        <% end %>
-                    </ul>
-            <% end %>
-            <% end %>
+     <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading larger">Our Services</h2>
+                    <br/> <br/>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x glyphicon glyphicon-search bigger wow bounceIn text-primary"></i>
+                        <h3>Find & Request</h3>
+                        <p class="text-muted">Looking for a musician to play for a show, a venue to perform at, or a visual artist to design and produce merchandise? Search for the right people--'cause you're in the right place.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x glyphicon glyphicon-heart-empty bigger wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3>Musician Dating</h3>
+                        <p class="text-muted">A Tinder-inspired service for individual musicians seeking bands, or bands that are seeking members, to appeal themselves to others. Find your musical soul mate now.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x glyphicon glyphicon-bullhorn bigger wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <h3>Advertise Events</h3>
+                        <p class="text-muted">In addition to finding resources, we also help you spread the word about your gig! Whether you're a venue representative, musician, or artist, you may post your events in our calendar and advertise as much as you want.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x glyphicon glyphicon-globe bigger wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                        <h3>Community Forum</h3>
+                        <p class="text-muted">Write posts and raise discussions about issues you care about in the art/music world. Make conversations, make friends!</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- CALENDAR END -->
-
-<%= link_to "new event", new_event_path %>
     </section>
-
-    <section class="no-padding" id="portfolio">
+    <section class="bg-primary" id="musicians">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading bigger">Featured Musicians</h2>
+                    <br/><br/>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid">
             <div class="row no-gutter">
                 <div class="col-lg-4 col-sm-6">
@@ -217,18 +198,16 @@
                         </div>
                     </a>
                 </div>
+                <div class="container text-center">
+                    <div class="call-to-action">
+                        <br/><br/><br/>
+                        <h2>Sign Up Now to Get Your Scene Survival Kit!</h2>
+                        <a href="#" class="btn btn-primary btn-xl wow tada">Sign Up!</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
-            </div>
-        </div>
-    </aside>
 
     <section id="contact">
         <div class="container">

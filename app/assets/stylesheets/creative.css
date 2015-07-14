@@ -52,7 +52,7 @@ p {
 }
 
 .bg-primary {
-    background-color: #f05f40;
+    background-color: #0f1e5e;
 }
 
 .bg-dark {
@@ -178,7 +178,8 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url(/assets/header.jpg);
+    /*Background Image from unsplash.com, by Daniel Robert*/
+    background-image: url(/assets/concert.jpg);
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -208,7 +209,7 @@ header .header-content .header-content-inner p {
     margin-bottom: 50px;
     font-size: 16px;
     font-weight: 300;
-    color: rgba(255,255,255,.7);
+    color: white;
 }
 
 @media(min-width:768px) {
@@ -241,6 +242,10 @@ header .header-content .header-content-inner p {
 
 .section-heading {
     margin-top: 0;
+}
+
+.larger{
+    font-size: 50px;
 }
 
 .service-box {
@@ -473,4 +478,12 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #222;
+}
+
+.bigger {
+    font-size: 4em;
+}
+
+.orange-font {
+    color: #fc7c61;
 }
