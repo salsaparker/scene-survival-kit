@@ -17,4 +17,4 @@
 /tmp
 Gemfile.lock
 /coverage
-/config/aws.yml
+.env
