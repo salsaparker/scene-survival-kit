@@ -123,6 +123,12 @@
                         <%= link_to(" Home", root_path, class: "fa fa-fw fa-home") %>
                     </li>
                     <li>
+                        <%= link_to(" Requests", root_path, class: "fa fa-fw fa-hand-o-right") %>
+                    </li>
+                    <li>
+                        <%= link_to(" Messages", root_path, class: "fa fa-fw fa-envelope-o") %>
+                    </li>
+                    <li>
                         <%= link_to(" Events", events_path, class: "fa fa-fw fa-bullhorn") %>
                     </li>
                     <li>
@@ -135,10 +141,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="fa fa-fw fa-user"> My Profile <span class="fa fa-w fa-sort-desc"></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <%= link_to(" View", profile_path(id: current_user.id), class: "fa fa-fw fa-eye") %>
+                                <a href="<%= profile_path(id: current_user.id) %>"><span class="fa fa-fw fa-eye"></span> View</a>
                             </li>
                             <li>
-                                <%= link_to(" Edit", edit_profile_path(id: current_user.id), class: "fa fa-fw fa-pencil") %>
+                                 <a href="<%= edit_profile_path(id: current_user.id) %>"><span class="fa fa-fw fa-pencil"></span> Edit</a>
                             </li>
                         </ul>
                     </li>
