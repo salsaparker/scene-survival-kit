@@ -11,7 +11,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # aws-sdk is the gem for Amazon S3 image hosting
 gem 'aws-sdk', '~> 1.6'  
-gem 'dotenv-rails'
 gem "paperclip", "~> 4.3"
 gem 'sdoc', '~> 0.4.0', group: :doc
 

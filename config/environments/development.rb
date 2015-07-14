@@ -40,7 +40,14 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
+  if Rails.env.development?
+    begin
+      amazon_config = YAML.load(File.read 'config/amazon.yml')
+      amazon_config.each{|key, value| ENV[key] = value}
+    rescue
+      raise "amazon.yml does not exist in your config folder. Please copy the example file and fill it out"
+    end
+  end
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_host_name => 's3-us-west-2.amazonaws.com',
