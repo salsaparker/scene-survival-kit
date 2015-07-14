@@ -13,6 +13,9 @@ gem "paperclip", "~> 4.3"
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
+gem "mailboxer"
 
 
 group :development, :test do

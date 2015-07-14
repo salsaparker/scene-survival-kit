@@ -8,9 +8,9 @@
   <meta name="author" content="">
 
   <title>SceneSurvivalKit</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag   'application', media: 'all' %>
 
-  
+
   <%= csrf_meta_tags %>
 
   <link href="/assets/logged_in.css" rel="stylesheet">
@@ -25,25 +25,18 @@
     <link rel="stylesheet" href="/assets/creative.css" type="text/css">
     </head>
 
-<<<<<<< HEAD
 <body>
-  
+
 <header>
     <%= render 'layouts/messages' %>
 </header>
 
-=======
->>>>>>> da5923fae1efd363258f0353206ac7a6bfbffe8b
     <% if user_signed_in? %>
         <%= render 'layouts/logged_in'%>
-    <% else %>
     <% end %>
-<<<<<<< HEAD
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-=======
->>>>>>> da5923fae1efd363258f0353206ac7a6bfbffe8b
 
 <%= yield %>
   <%= javascript_include_tag 'application' %>
