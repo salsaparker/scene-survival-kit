@@ -120,25 +120,25 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <%= link_to("Home", root_path, class: "fa fa-fw fa-dashboard") %>
+                        <%= link_to(" Home", root_path, class: "fa fa-fw fa-home") %>
                     </li>
                     <li>
-                        <%= link_to("Events", events_path, class: "fa fa-fw fa-dashboard") %>
+                        <%= link_to(" Events", events_path, class: "fa fa-fw fa-bullhorn") %>
                     </li>
                     <li>
-                        <%= link_to("Dating", root_path, class: "fa fa-fw fa-dashboard") %>
+                        <%= link_to(" Dating", root_path, class: "fa fa-fw fa-heart-o") %>
                     </li>
                     <li>
-                        <%= link_to("Forum", root_path, class: "fa fa-fw fa-dashboard") %>
+                        <%= link_to(" Forum", root_path, class: "fa fa-fw fa-forumbee") %>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> My Profile <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="fa fa-fw fa-user"> My Profile</a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <%= link_to("View", profile_path(id: current_user.id), class: "fa fa-fw fa-dashboard") %>
+                                <%= link_to(" View", profile_path(id: current_user.id), class: "fa fa-fw fa-eye") %>
                             </li>
                             <li>
-                                <%= link_to("Edit", edit_profile_path(id: current_user.id), class: "fa fa-fw fa-dashboard") %>
+                                <%= link_to(" Edit", edit_profile_path(id: current_user.id), class: "fa fa-fw fa-pencil") %>
                             </li>
                         </ul>
                     </li>
