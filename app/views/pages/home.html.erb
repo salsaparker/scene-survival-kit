@@ -20,10 +20,10 @@
                         <a class="page-scroll" href="#about">Our Mission</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">About</a>
+                        <a class="page-scroll" href="#services">Events</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#portfolio">Features</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Founders</a>
@@ -38,10 +38,10 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Your Favorite Source of Free Bootstrap Themes</h1>
+                <h1>Find The Resources You Need in the Scene.</h1>
                 <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <p>Connect with musicians, venues, and visual artists for your show.</p>
+                <%= link_to("Sign Up", new_user_registration_path, class: "btn btn-primary btn-xl page-scroll")%>
             </div>
         </div>
     </header>
@@ -100,7 +100,28 @@
     </section>
 
     <section id="services">
-        Events...
+        <!-- CALENDAR START -->
+        <div id="events">
+          <h2 id="month">
+                <%= link_to "<", date: @date.prev_month %>
+                <%= @date.strftime("%B %Y") %>
+                <%= link_to ">", date: @date.next_month %>
+            </h2>
+            
+            <%= calendar @date do |date| %>
+                <%= date.day %>
+              <% if @events_by_date[date] %>
+                    <ul>
+                        <% @events_by_date[date].each do |event| %>
+                            <li><%= link_to event.event_name, event %></li>
+                        <% end %>
+                    </ul>
+            <% end %>
+            <% end %>
+        </div>
+        <!-- CALENDAR END -->
+
+<%= link_to "new event", new_event_path %>
     </section>
 
     <section class="no-padding" id="portfolio">
