@@ -1,4 +1,10 @@
 <h1><%= @event.event_name %></h1>
+<p><%= @event.image %></p>
 <h2><%= @event.event_desc %></h2>
 <h2><%= @event.event_date %></h2>
 <h2><%= @event.start_time %></h2>
+
+<%= link_to("Back", events_path) %>
+<%= link_to("Edit", edit_event_path(@event.id)) %>
+<%= link_to("Delete", event_path(@event.id), method: :delete) %>
+<%= link_to("Add another event", new_event_path) %>
