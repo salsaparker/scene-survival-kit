@@ -1,0 +1,7 @@
+<h1>Playlists#new</h1>
+<p>Find me in app/views/playlists/new.html.erb</p>
+<%= form_for @playlist do |playlist| %>
+  <%= playlist.label :playlist_url %>
+  <%= playlist.text_field :playlist_url %>
+  <%= playlist.submit %>
+<% end %>

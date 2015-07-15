@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :musicians
   resources :profiles
   resources :venue_reps
+  resources :playlists
 
   # get 'venue_reps/index'
 
