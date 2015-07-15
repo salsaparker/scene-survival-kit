@@ -3,6 +3,7 @@ class Profile < ActiveRecord::Base
 	has_one :visual_artist
 	has_one :venue_rep
 	has_one :musician
+  has_many :playlists, dependent: :destroy
 
  	has_attached_file :image, styles: { large: "600x600>", 
 																				 medium: "300x300>", 

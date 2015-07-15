@@ -14,10 +14,9 @@ Rails.application.routes.draw do
   resources :musicians
   resources :profiles
   resources :venue_reps
- 
-  
-
+  resources :playlists
   resources :profile
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
