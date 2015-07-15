@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_798a6bc0",
+        "filename": "app/views/layouts/application.html.erb",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1005695
+      },
+      "writtenOn": "2015-07-15T20:04:13Z",
+      "side": 1,
+      "message": "This seems good, I\u0027m not totally sure what the difference is though.",
+      "revId": "e5145ff46222a52974fd436f50c9ecd78f8ea908",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_199a3f14",
+        "filename": "config/routes.rb",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1005695
+      },
+      "writtenOn": "2015-07-15T20:04:13Z",
+      "side": 1,
+      "message": "bueno",
+      "revId": "e5145ff46222a52974fd436f50c9ecd78f8ea908",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
