@@ -21,7 +21,8 @@ gem "mailboxer"
 # gravatar is used for the messaging image
 gem 'gravatar_image_tag'
 # gem to select recipients for messaging
-# gem 'chosen-rails'
+gem 'chosen-rails'
+gem 'compass-rails'
 
 
 group :development, :test do
