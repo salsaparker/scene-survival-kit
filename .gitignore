@@ -17,4 +17,4 @@
 /tmp
 Gemfile.lock
 /coverage
-.env
+/config/amazon.yml
