@@ -46,7 +46,7 @@ class AddressesController < ApplicationController
 private
 
 	def find_address
-		@address = Address.find_by_id(params[:id])
+		@address = Address.find(params[:id])
 	end
 
 	def address_params

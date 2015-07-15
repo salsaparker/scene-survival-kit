@@ -24,4 +24,5 @@ group :development, :test do
   gem 'spring'
 	gem 'rspec-rails', '~> 3.0'
 	gem 'simplecov', :require => false
+	gem 'shoulda-matchers'
 end

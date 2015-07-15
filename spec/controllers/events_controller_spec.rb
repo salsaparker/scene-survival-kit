@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe AddressesController, type: :controller do
+RSpec.describe EventsController, type: :controller do
 
-let(:address) {Address.create(street: '123 South Street', city: 'Test City', state: 'Test State', zip: 12345)}
+ let(:event) {Event.create(event_name: 'Big Crazy Music Festival')}
 
 	describe "GET #index" do
 		it "returns http success" do
@@ -13,18 +13,18 @@ let(:address) {Address.create(street: '123 South Street', city: 'Test City', sta
 
   describe "GET #show" do
     it "returns http success" do
-      get :show, id: address.id
+      get :show, id: event.id
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "POST #create" do
-    it "creates a new address successfully" do
-      post :create, address: {street: '666 Adams Street', city: 'Spooky City', state: 'Spooky State', zip: 98765}
+    it "creates a new event successfully" do
+      post :create, event: {event_name: 'Test Event'}
       expect(response).to have_http_status(:redirect)
     end
     # it 'does not create successfully' do
-    #   post :create, address:{street: nil}
+    #   post :create, event:{event_name: nil}
     #   expect(flash[:error]).to be_present
     #   expect(response).to render_template(:new)
     # end
@@ -38,31 +38,30 @@ let(:address) {Address.create(street: '123 South Street', city: 'Test City', sta
   end
 
   describe "GET #edit" do
-    it "edits address successfully" do
-      get :edit, id: address.id
+    it "edits event successfully" do
+      get :edit, id: event.id
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "PUT #update" do
-    it "updates address successfully" do
-      put :update, id: address.id, address: {street: '555 Street'}
-      new_address = '555 Street'
-      updated_address = address.reload
-      expect(updated_address.street).to eq(new_address)
+    it "updates event successfully" do
+      put :update, id: event.id, event: {event_name: 'Test Event'}
+      new_event = 'Test Event'
+      updated_event = event.reload
+      expect(updated_event.event_name).to eq(new_event)
       expect(response).to have_http_status(:redirect)
     end
     # it 'does not update successfully' do
-    #   put :update, id: address.id, address:{street: nil}
+    #   put :update, id: event.id, event:{street: nil}
     #   expect(flash[:error]).to be_present
     #   expect(response).to render_template(:edit)
     # end
-      
   end
 
   describe "DELETE #destroy" do
-    it "deletes address successfully" do
-      delete :destroy, id: address.id
+    it "deletes event successfully" do
+      delete :destroy, id: event.id
       expect(response).to have_http_status(:redirect)
     end
   end
