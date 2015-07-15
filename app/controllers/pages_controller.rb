@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   layout 'logged_in'
-  def home
+  def welcome
   end
 
 end
