@@ -9,9 +9,11 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+# aws-sdk is the gem for Amazon S3 image hosting
+gem 'aws-sdk', '~> 1.6'  
 gem "paperclip", "~> 4.3"
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'font-awesome-sass'
 gem 'devise'
 gem 'bootstrap-will_paginate'
 gem 'will_paginate'
@@ -23,4 +25,5 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+	gem 'rspec-rails', '~> 3.0'
 end
