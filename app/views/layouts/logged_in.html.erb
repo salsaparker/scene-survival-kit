@@ -138,28 +138,28 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
                         <li>
-                            <%= link_to(" Home", root_path, class: "fa fa-fw fa-home") %>
+                            <%= link_to(" Home", welcome_path, class: "fa fa-fw fa-home") %>
                         </li>
                         <li> 
                             <%= link_to(" My Profile", profile_path(id: current_user.id), class: "fa fa-fw fa-user") %>
                         </li>
                         <li>
-                            <%= link_to(" Requests", root_path, class: "fa fa-fw fa-hand-o-right") %>
+                            <%= link_to(" Requests", welcome_path, class: "fa fa-fw fa-hand-o-right") %>
                         </li>
                         <li>
-                            <%= link_to(" Messages", root_path, class: "fa fa-fw fa-envelope-o") %>
+                            <%= link_to(" Messages", welcome_path, class: "fa fa-fw fa-envelope-o") %>
                         </li>
                         <li>
                             <%= link_to(" Events", events_path, class: "fa fa-fw fa-bullhorn") %>
                         </li>
                         <li>
-                            <%= link_to(" Dating", root_path, class: "fa fa-fw fa-heart-o") %>
+                            <%= link_to(" Dating", welcome_path, class: "fa fa-fw fa-heart-o") %>
                         </li>
                         <li>
-                            <%= link_to(" Forum", root_path, class: "fa fa-fw fa-forumbee") %>
+                            <%= link_to(" Forum", welcome_path, class: "fa fa-fw fa-forumbee") %>
                         </li>
                         <li class="active">
-                            <%= link_to("Search", root_path, class: "fa fa-fw fa-file")%>
+                            <%= link_to("Search", welcome_path, class: "fa fa-fw fa-file")%>
                         </li>
                     </ul>
                 </div>
