@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :musicians
   resources :profiles
   resources :venue_reps
+  resources :conversations, only: [:index, :show, :destroy]
+  resources :messages, only: [:new, :create]
 
   # get 'venue_reps/index'
 

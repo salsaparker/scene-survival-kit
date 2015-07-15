@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # aws-sdk is the gem for Amazon S3 image hosting
-gem 'aws-sdk', '~> 1.6'  
+gem 'aws-sdk', '~> 1.6'
 gem "paperclip", "~> 4.3"
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'font-awesome-sass'
@@ -18,6 +18,10 @@ gem 'devise'
 gem 'bootstrap-will_paginate'
 gem 'will_paginate'
 gem "mailboxer"
+# gravatar is used for the messaging image
+gem 'gravatar_image_tag'
+# gem to select recipients for messaging
+# gem 'chosen-rails'
 
 
 group :development, :test do

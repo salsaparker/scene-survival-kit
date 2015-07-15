@@ -9,7 +9,7 @@
   <meta name="author" content="">
 
   <title>SceneSurvivalKit</title>
-  <%= stylesheet_link_tag   'application', media: 'all' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 
   <link href="/assets/logged_in.css" rel="stylesheet">
@@ -34,7 +34,6 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
-<%= yield %>
 
   <% if user_signed_in? %>
       <%= render 'layouts/logged_in'%>

@@ -40,6 +40,7 @@
                 <hr>
                 <p>Connect with musicians, venues, or visual artists for your show.</p>
                 <%= link_to("Sign Up", new_user_registration_path, class: "btn btn-primary btn-xl page-scroll")%>
+                <%= link_to("Sign In", new_user_session_path, class: "btn btn-primary btn-xl page-scroll")%>
             </div>
         </div>
     </header>
@@ -200,7 +201,7 @@
                     <div class="call-to-action">
                         <br/><br/><br/>
                         <h2>Sign Up Now to Get Your Scene Survival Kit!</h2>
-                        <a href="#" class="btn btn-primary btn-xl wow tada">Sign Up!</a>
+                        <%= link_to("Sign Up", new_user_registration_path, class: "btn btn-primary btn-xl page-scroll")%>
                     </div>
                 </div>
             </div>
@@ -226,5 +227,3 @@
             </div>
         </div>
     </section>
-
-
