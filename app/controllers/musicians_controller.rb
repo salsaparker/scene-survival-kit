@@ -1,5 +1,7 @@
 class MusiciansController < ApplicationController
 
+
+# before_action :authenticate_user!
 before_action :find_musician, only: [:edit, :show, :update, :destroy]
 
   def index
@@ -45,7 +47,7 @@ before_action :find_musician, only: [:edit, :show, :update, :destroy]
 private
 
 	def find_musician
-		@musician = Musician.find(params[:id])
+		@musician = Musician.find_by_id(params[:id])
 	end
 
 	def musician_params

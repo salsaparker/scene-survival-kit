@@ -1,5 +1,5 @@
 class ProfileController < ApplicationController
-  before_action :authenticate_member!
+  before_action :authenticate_user!
   before_action :find_by, only:[:edit, :show, :update, :destroy]
   belongs_to :user
   has_one :musician
