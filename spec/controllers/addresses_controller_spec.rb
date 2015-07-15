@@ -23,11 +23,11 @@ let(:address) {Address.create(street: '123 South Street', city: 'Test City', sta
       post :create, address: {street: '666 Adams Street', city: 'Spooky City', state: 'Spooky State', zip: 98765}
       expect(response).to have_http_status(:redirect)
     end
-    # it 'does not create successfully' do
-    #   post :create, address:{street: nil}
-    #   expect(flash[:error]).to be_present
-    #   expect(response).to render_template(:new)
-    # end
+    it 'fails to create new address' do
+      post :create, address:{street: nil}
+      expect(flash[:error]).to be_present
+      expect(response).to render_template(:new)
+    end
   end
 
   describe "GET #new" do 
@@ -52,12 +52,11 @@ let(:address) {Address.create(street: '123 South Street', city: 'Test City', sta
       expect(updated_address.street).to eq(new_address)
       expect(response).to have_http_status(:redirect)
     end
-    # it 'does not update successfully' do
-    #   put :update, id: address.id, address:{street: nil}
-    #   expect(flash[:error]).to be_present
-    #   expect(response).to render_template(:edit)
-    # end
-      
+    it 'fails to update address' do
+      put :update, id: address.id, address: {street: nil}
+      expect(flash[:error]).to be_present
+      expect(response).to render_template(:edit)
+    end  
   end
 
   describe "DELETE #destroy" do
