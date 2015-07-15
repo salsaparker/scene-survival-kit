@@ -1,10 +1,10 @@
 <h1>Playlists#show</h1>
 <p>Find me in app/views/playlists/show.html.erb</p>
-<!-- <iframe width="100%" height="56%"
-src="<%#= embed_player_url(@playlist.playlist_url) %>">
-</iframe> -->
-
-<iframe id="sc-widget" src="<%= embed_player_url(@playlist.playlist_url) %>" width="100%" height="56%" scrolling="no" frameborder="no"></iframe>
+<% if @playlist.playlist_url.include?("youtube") %>
+  <iframe width="100%" height="56%" src="<%= embed_yt_url(@playlist.playlist_url) %>"></iframe>
+<% elsif @playlist.playlist_url.include?("soundcloud") %>
+  <iframe id="sc-widget" src="<%= embed_sc_url(@playlist.playlist_url) %>" width="100%" height="56%" scrolling="no" frameborder="no"></iframe>
+<% end %>
 
 <script type="text/javascript">
   (function(){
@@ -29,3 +29,4 @@ src="<%#= embed_player_url(@playlist.playlist_url) %>">
 
   }());
 </script>
+
