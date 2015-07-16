@@ -17,6 +17,8 @@ gem 'font-awesome-sass'
 gem 'devise'
 
 
+
+
 group :development, :test do
   gem 'pry'
   gem 'byebug'
