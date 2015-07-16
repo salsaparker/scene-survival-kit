@@ -54,7 +54,7 @@ margin-left: 200px;
 /*====================================================*/
 
 .calendar_grid {
-  border: 1px solid gray;
+  border: 2px solid gray;
   margin-bottom: 30px;
   .month_header {
     background-color: gray;
@@ -73,14 +73,14 @@ margin-left: 200px;
   }
   .month {
     a {
-      color: gray;
+      color: navy;
     }
     background-color: #ededed;
     border: 1px solid whitesmoke;
   }
   .week .span1 {
     padding: 2px;
-    // height: 100px;
+    height: 100px;
     ul.event_summary {
       margin: 0;
       li {

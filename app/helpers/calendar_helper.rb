@@ -37,7 +37,7 @@ module CalendarHelper
     end
 
     def day_classes(day)
-      classes = ['span1']
+      classes = ["span1"]
       classes << "today" if day == Date.today
       classes << "notmonth" if day.month != date.month
       classes << "month" if day.month == date.month
@@ -48,6 +48,18 @@ module CalendarHelper
       first = date.beginning_of_month.beginning_of_week(START_DAY)
       last = date.end_of_month.end_of_week(START_DAY)
       (first..last).to_a.in_groups_of(7)
+    end
+  end
+  
+  def event_style(event)
+    "background-color: #{event.color}:"
+  end
+  
+  def event_link_style(event)
+    if %w(white silver yellow lime aqua teal fuchsia).include?(event.color)
+      "color: black;"
+    else
+      "color: white;"
     end
   end
 end
