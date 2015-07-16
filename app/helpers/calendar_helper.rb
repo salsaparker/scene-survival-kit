@@ -11,20 +11,22 @@ module CalendarHelper
     delegate :content_tag, to: :view
 
     def table
-      content_tag :table, class: "calendar" do |variable|
+      content_tag :table, class: "calendar_grid" do |variable|
         header + week_rows
       end
     end
 
     def header
-      content_tag :tr do
-        HEADER.map { |day| content_tag :th, day }.join.html_safe
+      content_tag :tr, class: "month_header row_fluid" do
+        HEADER.map { |day| content_tag :th, class: "span1" do
+        day
+        end }.join.html_safe
       end
     end
 
     def week_rows
       weeks.map do |week|
-        content_tag :tr do
+        content_tag :tr, class: 'row-fluid week' do
           week.map { |day| day_cell(day) }.join.html_safe
         end
       end.join.html_safe
@@ -35,9 +37,10 @@ module CalendarHelper
     end
 
     def day_classes(day)
-      classes = []
+      classes = ['span1']
       classes << "today" if day == Date.today
       classes << "notmonth" if day.month != date.month
+      classes << "month" if day.month == date.month
       classes.empty? ? nil : classes.join(" ")
     end
 
