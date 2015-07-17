@@ -47,8 +47,8 @@ RSpec.describe PlaylistsController, type: :controller do
 
   describe "PUT #update" do
     it "updates playlist successfully" do
-      put :update, id: playlist.id, playlist: {playlist_url: 'Random.url'}
-      new_playlist = 'Random.url'
+      put :update, id: playlist.id, playlist: {playlist_url: 'random.url'}
+      new_playlist = 'random.url'
       updated_playlist = playlist.reload
       expect(updated_playlist.playlist_url).to eq(new_playlist)
       expect(response).to have_http_status(:redirect)

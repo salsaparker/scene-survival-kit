@@ -1,7 +1,7 @@
 class VenueRepsController < ApplicationController
 	
 # before_action :authenticate_user!
-before_action :find_venue_rep, only: {:edit, :show, :update, :destroy}
+before_action :find_venue_rep, only: [:edit, :show, :update, :destroy]
 
   def index
 		@venue_reps = VenueRep.all
