@@ -9,8 +9,8 @@
 	                    <small>Search For Someone</small>
 	                </h1>
 
-	                <%= form_tag profile_path, :method => 'get' do %>
-	                		<%= text_field_tag, :search, params[:search]%>
+	                <%= form_tag profiles_path, :method => 'get' do %>
+	                		<%= text_field_tag :search, params[:search]%>
 	                		<%= submit_tag "search"%>
 	                <% end %>
 

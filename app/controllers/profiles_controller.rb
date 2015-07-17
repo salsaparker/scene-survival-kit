@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
 before_action :find_profile, only: [:edit, :update, :show, :destroy]
 
   def index
-		@profiles = Profile.all
+		@profiles = Profile.where(["name LIKE ?", "%#{params[:search]}%"])
   end
 
   def show
