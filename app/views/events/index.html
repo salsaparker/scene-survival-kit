@@ -1,20 +1,20 @@
 <h1 class="text-center"><b>Events</b></h1>	
 <h3 class="text-center">Click on an event title to see more information.</h3>
 
-<div class="col-sm-12 col-lg-6">
+
 <!-- CALENDAR START -->
-<div id="events">
-  <h2 id="month">
+<div class="container">
+  <h2 class="text-center">
     <%= link_to "<", date: @date.prev_month %>
     <%= @date.strftime("%B %Y") %>
     <%= link_to ">", date: @date.next_month %>
   </h2>
 <!-- this calls the calendar helper (helpers/calendar_helper.rb) -->
-<div id="calendar">
+<div>
   <%= calendar @date do |date| %>
     <%= date.day %>
     <% if @events_by_date[date] %>
-      <ul>
+      <ul class="list-unstyled">
         <% @events_by_date[date].each do |event| %>
           <li><%= link_to event.event_name, event %></li>
         <% end %>
