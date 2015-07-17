@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
 
+  get 'visual_artists/index'
+
+  get 'visual_artists/new'
+
+  get 'visual_artists/show'
+
+  get 'visual_artists/edit'
+
   get 'pages/welcome', as: :welcome
 
   devise_for :users, controllers: { registrations: "registrations" }

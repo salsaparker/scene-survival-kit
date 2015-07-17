@@ -1,0 +1,2 @@
+module VisualArtistsHelper
+end

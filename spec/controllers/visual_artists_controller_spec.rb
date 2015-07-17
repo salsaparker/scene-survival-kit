@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe VenueRepsController, type: :controller do
 
-let(:venue_rep) {VenueRep.create(profile_id: 1)}
+let(:visual_artist) {VisualArtist.create(name: 'Crunch Buttsteak')}
 
   describe "GET #index" do
     it "returns http success" do 
@@ -13,14 +13,14 @@ let(:venue_rep) {VenueRep.create(profile_id: 1)}
 
   describe "GET #show" do
     it "returns http success" do
-      get :show, id: venue_rep.id
+      get :show, id: visual_artist.id
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "POST #create" do
-    it "creates a new venue rep successfully" do
-      post :create, venue_rep: {profile_id: 99}
+    it "creates a new visual artist successfully" do
+      post :create, visual_artist: {name: 'Big McLargehuge'}
       expect(response).to have_http_status(:redirect)
     end
     # it 'fails to create new address' do
@@ -38,18 +38,18 @@ let(:venue_rep) {VenueRep.create(profile_id: 1)}
   end
 
   describe "GET #edit" do
-    it "edits venue rep successfully" do
-      get :edit, id: venue_rep.id
+    it "edits visual artist successfully" do
+      get :edit, id: visual_artist.id
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "PUT #update" do
-    it "updates venue rep successfully" do
-      put :update, id: venue_rep.id, venue_rep: {profile_id: 99}
-      new_venue_rep = 99
-      updated_venue_rep = venue_rep.reload
-      expect(updated_venue_rep.profile_id).to eq(new_venue_rep)
+    it "updates visual artist successfully" do
+      put :update, id: visual_artist.id, visual_artist: {name: 'Slab Hardcheese'}
+      new_venue_rep = 'Slab Hardcheese'
+      updated_visual_artist = visual_artist.reload
+      expect(updated_visual_artist.name).to eq(new_visual_artist)
       expect(response).to have_http_status(:redirect)
     end
     # it 'fails to update address' do
@@ -61,7 +61,7 @@ let(:venue_rep) {VenueRep.create(profile_id: 1)}
 
   describe "DELETE #destroy" do
     it "deletes venue successfully" do
-      delete :destroy, id: venue_rep.id
+      delete :destroy, id: visual_artist.id
       expect(response).to have_http_status(:redirect)
     end
   end
