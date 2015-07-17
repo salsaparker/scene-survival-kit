@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :profiles
   resources :venue_reps
   resources :playlists
-  resources :profile
+  resources :venues
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
