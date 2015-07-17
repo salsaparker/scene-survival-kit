@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-before_action :find_album, :only [:edit, :update, :show, :destroy]  
+before_action :find_album, only: [:edit, :update, :show, :destroy]  
   def index
     @albums = Album.find_by(params[:profile_id])
   end
@@ -47,7 +47,7 @@ before_action :find_album, :only [:edit, :update, :show, :destroy]
   private
 
     def find_album
-      @album = Album.find_by(:id params[:id])
+      @album = Album.find_by(params[:id])
       unless @album
         render status: 404
       end
