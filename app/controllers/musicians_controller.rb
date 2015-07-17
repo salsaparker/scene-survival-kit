@@ -16,7 +16,7 @@ before_action :find_musician, only: [:edit, :show, :update, :destroy]
   end
 
 	def create
-		@musician = Musician.new(musician_params)
+		@musician = Musician.create(musician_params)
 		if @musician.save
 			flash[:notice] = "Musician created!"
 			redirect_to musicians_path
