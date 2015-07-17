@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 RSpec.describe VenueRepsController, type: :controller do

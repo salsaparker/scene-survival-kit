@@ -1,52 +1,54 @@
 class VisualArtistsController < ApplicationController
-before_action :find_va, only: [:edit, :update, :show, :destroy]
+	# before_action :authenticate_user!
+	before_action :find_visual_artist, only: [:edit, :show, :update, :destroy]
 
   def index
-    @visual_artists = VisualArtist.all
+		@visual_artists = VisualArtist.all
+  end
+
+	def show
   end
 
   def new
-    @visual_artist = VisualArtist.new
+		@visual_artist = VisualArtist.new
   end
 
-  def create
-    @visual_artist = VisualArtist.create(va_params)
-    if @visual_artist.save
-      flash[:success]= "Welcome!"
-      redirect_to profile_path(@visual_artist.profile_id)
-    else
-      flash[:error]= "Something went wrong!"
-      render :new
-    end
-  end
+	def create
+		@visual_artist = VisualArtist.new(visual_artist_params)
+		if @visual_artist.save
+			flash[:notice] = "New visual artist saved!"
+			redirect_to visual_artists_path
+		else
+			flash[:error] = "Something went wrong. Please try again."
+			render :new
+		end
+	end
 
   def edit
   end
 
-  def update
-    if @visual_artist.update
-      flash[:success]= "Profile updated!"
-      redirect_to profile_path(@visual_artist.profile_id)
-    else
-      flash[:error]= "Something went wrong!"
-      render :edit
-    end
-  end
+	def update
+		if @visual_artist.update(visual_artist_params)
+			flash[:notice] = "Visual Artist updated"
+			redirect_to visual_artists_path
+		else
+			flash[:error] = "Something went wrong. Please try again."
+			render :edit	
+		end
+	end
 
-  def show    
-  end
+	def destroy
+		@visual_artist.destroy
+		redirect_to visual_artists_path
+	end
 
-  def destroy
-    @visual_artist.destroy
-  end
+	private
 
-  private
+	def find_visual_artist
+		@visual_artist = VisualArtist.find(params[:id])
+	end
 
-    def find_va
-      @visual_artist = VisualArtist.find_by(id: params[:id])
-    end
-
-    def va_params
-      params.require(:visual_artist).require(:medium, :profile_id)
-    end
+	def visual_artist_params
+		params.require(:visual_artist).permit(:medium, :profile_id)
+	end
 end

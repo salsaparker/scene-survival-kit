@@ -2,7 +2,7 @@ class PlaylistsController < ApplicationController
 before_action :find_playlist, only: [:edit, :update, :show, :destroy]  
   
   def index
-    playlists = Playlist.all
+    @playlists = Playlist.all
   end
 
   def new
@@ -38,6 +38,7 @@ before_action :find_playlist, only: [:edit, :update, :show, :destroy]
 
   def destroy
     @playlist.destroy  
+    redirect_to playlists_path
   end
 
   private

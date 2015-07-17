@@ -1,7 +1,7 @@
 class VenueRepsController < ApplicationController
 	
 # before_action :authenticate_user!
-before_action :find_venue_rep, only: [:edit, :show, :update, :destroy]
+before_action :find_venue_rep, only: {:edit, :show, :update, :destroy}
 
   def index
 		@venue_reps = VenueRep.all
@@ -31,7 +31,7 @@ before_action :find_venue_rep, only: [:edit, :show, :update, :destroy]
 	def update
 		if @venue_rep.update(venue_rep_params)
 			flash[:notice] = "Venue Representative Updated!"
-			redirect_to venue_reps_path
+			redirect_to venue_rep_path(VenueRep.id)
 		else
 			flash[:alert] = "Something went wrong. Please try again."
 			render :edit
