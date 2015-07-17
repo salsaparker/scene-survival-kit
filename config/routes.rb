@@ -1,14 +1,5 @@
 Rails.application.routes.draw do
 
-
-  get 'visual_artists/index'
-
-  get 'visual_artists/new'
-
-  get 'visual_artists/show'
-
-  get 'visual_artists/edit'
-
   get 'pages/welcome', as: :welcome
 
   devise_for :users, controllers: { registrations: "registrations" }
@@ -23,6 +14,9 @@ Rails.application.routes.draw do
   resources :playlists
   resources :venues
   resources :visual_artists
+  resources :albums
+  resources :photos
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
