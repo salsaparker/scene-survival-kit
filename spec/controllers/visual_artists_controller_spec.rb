@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe VenueRepsController, type: :controller do
+RSpec.describe VisualArtistsController, type: :controller do
 
-let(:visual_artist) {VisualArtist.create(name: 'Crunch Buttsteak')}
+let(:visual_artist) {VisualArtist.create(medium: 'Macaroni Collages')}
 
   describe "GET #index" do
     it "returns http success" do 
@@ -20,7 +20,7 @@ let(:visual_artist) {VisualArtist.create(name: 'Crunch Buttsteak')}
 
   describe "POST #create" do
     it "creates a new visual artist successfully" do
-      post :create, visual_artist: {name: 'Big McLargehuge'}
+      post :create, visual_artist: {medium: 'Feathers'}
       expect(response).to have_http_status(:redirect)
     end
     # it 'fails to create new address' do
@@ -46,10 +46,10 @@ let(:visual_artist) {VisualArtist.create(name: 'Crunch Buttsteak')}
 
   describe "PUT #update" do
     it "updates visual artist successfully" do
-      put :update, id: visual_artist.id, visual_artist: {name: 'Slab Hardcheese'}
-      new_venue_rep = 'Slab Hardcheese'
+      put :update, id: visual_artist.id, visual_artist: {medium: 'Fingerpainting'}
+      new_visual_artist = 'Fingerpainting'
       updated_visual_artist = visual_artist.reload
-      expect(updated_visual_artist.name).to eq(new_visual_artist)
+      expect(updated_visual_artist.medium).to eq(new_visual_artist)
       expect(response).to have_http_status(:redirect)
     end
     # it 'fails to update address' do
