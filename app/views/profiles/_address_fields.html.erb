@@ -1,0 +1,16 @@
+<h1> NEW Address </h1>
+<%= form_for @address do |f| %><br/>
+	<%= f.label(:street)%><br/>
+	<%= f.text_field(:street)%>
+	<br/>
+	<%= f.label(:city)%> <br/>
+	<%= f.text_field(:city)%>
+	<br/>
+  <%= f.label(:state)%>
+	<%= f.text_field(:state)%>
+	<br/>
+  <%= f.label(:zip)%>
+	<%= f.text_field(:zip)%>
+	<br/>
+	<%= f.submit("Submit")%>
+<%end%>
