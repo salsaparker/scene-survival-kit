@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-	before_action :authenticate_user!
+  before_action :authenticate_user!
   layout 'logged_in'
   
   def welcome
@@ -8,3 +8,4 @@ class PagesController < ApplicationController
   def choose_profile
   end
 end
+

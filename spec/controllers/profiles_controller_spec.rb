@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe ProfilesController, type: :controller do
 
- let(:profile) {profile.create(name: '')}
+ let(:profile) {Profile.create(name: 'Cool Name', bio: 'This is my bio.', phone_number: 555-555-5555)}
+
 
 	describe "GET #index" do
 		it "returns http success" do
@@ -20,11 +21,11 @@ RSpec.describe ProfilesController, type: :controller do
 
   describe "POST #create" do
     it "creates a new profile successfully" do
-      post :create, profile: {event_name: 'Test Event'}
+      post :create, profile: {name: 'Profile Name'}
       expect(response).to have_http_status(:redirect)
     end
     # it 'does not create successfully' do
-    #   post :create, event:{event_name: nil}
+    #   post :create, profile:{name: nil}
     #   expect(flash[:error]).to be_present
     #   expect(response).to render_template(:new)
     # end
@@ -38,30 +39,30 @@ RSpec.describe ProfilesController, type: :controller do
   end
 
   describe "GET #edit" do
-    it "edits event successfully" do
-      get :edit, id: event.id
+    it "edits profile successfully" do
+      get :edit, id: profile.id
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "PUT #update" do
-    it "updates event successfully" do
-      put :update, id: event.id, event: {event_name: 'Test Event'}
-      new_event = 'Test Event'
-      updated_event = event.reload
-      expect(updated_event.event_name).to eq(new_event)
+    it "updates profile successfully" do
+      put :update, id: profile.id, profile: {name: 'Mr. Profile'}
+      new_profile = 'Mr. Profile'
+      updated_profile = profile.reload
+      expect(updated_profile.name).to eq(new_profile)
       expect(response).to have_http_status(:redirect)
     end
     # it 'does not update successfully' do
-    #   put :update, id: event.id, event:{street: nil}
+    #   put :update, id: profile.id, profile:{name: nil}
     #   expect(flash[:error]).to be_present
     #   expect(response).to render_template(:edit)
     # end
   end
 
   describe "DELETE #destroy" do
-    it "deletes event successfully" do
-      delete :destroy, id: event.id
+    it "deletes profile successfully" do
+      delete :destroy, id: profile.id
       expect(response).to have_http_status(:redirect)
     end
   end

@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   def index
 		@events = Event.all
 		@events_by_date = @events.group_by(&:event_date)
+  	# @events_by_date = @all_events.group_by(&:activity_on)
 		@date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 

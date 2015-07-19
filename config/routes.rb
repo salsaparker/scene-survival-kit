@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   get 'pages/welcome', as: :welcome
   get 'pages/choose_profile', as: :choose_profile
 
@@ -13,6 +12,13 @@ Rails.application.routes.draw do
   resources :musicians
   resources :profiles
   resources :venue_reps
+  resources :playlists
+  resources :venues
+  resources :visual_artists
+  resources :albums
+  resources :photos
+  
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
