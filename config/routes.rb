@@ -14,9 +14,10 @@ Rails.application.routes.draw do
   resources :venue_reps
   resources :playlists
   resources :venues
-  resources :visual_artists
+g
   resources :albums
   resources :photos
+  resources :searches 
   
 
   # Example of regular route:
