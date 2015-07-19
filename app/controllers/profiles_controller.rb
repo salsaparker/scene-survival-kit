@@ -5,7 +5,8 @@ before_action :find_profile, only: [:edit, :update, :show, :destroy]
 
   def index
 		@profiles = Profile.search(params[:search])
-
+	end
+	
   def show
   end
 
