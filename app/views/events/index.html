@@ -1,16 +1,17 @@
+<div id="events_background">
 <h1 class="text-center"><b>Events</b></h1>	
 <h3 class="text-center">Click on an event title to see more information.</h3>
 
 
 <!-- CALENDAR START -->
-<div class="container">
+<div id="microphone" class="container">
   <h2 class="text-center">
     <%= link_to "<", date: @date.prev_month %>
     <%= @date.strftime("%B %Y") %>
     <%= link_to ">", date: @date.next_month %>
   </h2>
 <!-- this calls the calendar helper (helpers/calendar_helper.rb) -->
-<div>
+<div class="col-md-offset-1">
   <%= calendar @date do |date| %>
     <%= date.day %>
     <% if @events_by_date[date] %>
@@ -24,6 +25,8 @@
   </div>
 </div>
 </div>  
+
+</div>
 
 <!-- CALENDAR END -->
 

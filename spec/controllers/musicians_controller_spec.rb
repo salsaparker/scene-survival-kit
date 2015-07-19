@@ -23,8 +23,8 @@ let(:musician) {Musician.create(instrument: 'Harmonica')}
       post :create, musician: {instrument: 'banjo'}
       expect(response).to have_http_status(:redirect)
     end
-    # it 'fails to create new address' do
-    #   post :create, address:{street: nil}
+    # it 'fails to create new musician' do
+    #   post :create, musician:{instrument: nil}
     #   expect(flash[:error]).to be_present
     #   expect(response).to render_template(:new)
     # end
@@ -52,8 +52,8 @@ let(:musician) {Musician.create(instrument: 'Harmonica')}
       expect(updated_musician.instrument).to eq(new_musician)
       expect(response).to have_http_status(:redirect)
     end
-    # it 'fails to update address' do
-    #   put :update, id: address.id, address: {street: nil}
+    # it 'fails to update musician' do
+    #   put :update, id: musician.id, musician: {instrument: nil}
     #   expect(flash[:error]).to be_present
     #   expect(response).to render_template(:edit)
     # end  

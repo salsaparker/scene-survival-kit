@@ -53,6 +53,18 @@ margin-left: 200px;
 
 /*====================================================*/
 
+#events_background {
+  background-color: black;
+  color: silver;
+}
+
+#microphone {
+  background-image: image-url('blue_mic.jpg');
+  repeat: no-repeat;
+  background-size: 100%;
+}
+
+
 .calendar_grid {
   border: 2px solid gray;
   margin-bottom: 30px;
@@ -69,11 +81,15 @@ margin-left: 200px;
   }
   .notmonth, .notmonth a { color: white; }
   .month.today { 
-    background-color: #D7F2FF; 
-  }
+    background-color: cyan; 
+}
+
   .month {
     a {
-      color: navy;
+      color: midnightblue;
+    }
+    a:hover {
+      color: crimson;
     }
     background-color: #ededed;
     border: 1px solid whitesmoke;
