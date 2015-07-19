@@ -20,7 +20,7 @@ before_action :find_musician, only: [:edit, :show, :update, :destroy]
 		@musician = Musician.new(musician_params)
 		if @musician.save
 			flash[:notice] = "Musician created!"
-			redirect_to musicians_path
+			redirect_to welcome_path
 		else
 			flash[:alert] = "Something went wrong. Please try again."
 			render :new

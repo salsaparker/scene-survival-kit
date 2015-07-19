@@ -19,7 +19,7 @@ before_action :find_venue_rep, only: [:edit, :show, :update, :destroy]
 		@venue_rep = VenueRep.new(venue_rep_params)
 		if @venue_rep.save
 			flash[:notice] = "Venue Representative Created!"
-			redirect_to venue_reps_path
+			redirect_to welcome_path
 		else
 			flash[:alert] = "Something went wrong. Please try again."
 			render :new

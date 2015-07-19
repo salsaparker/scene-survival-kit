@@ -18,7 +18,7 @@ class VisualArtistsController < ApplicationController
 		@visual_artist = VisualArtist.new(visual_artist_params)
 		if @visual_artist.save
 			flash[:notice] = "New visual artist saved!"
-			redirect_to visual_artists_path
+			redirect_to welcome_path
 		else
 			flash[:error] = "Something went wrong. Please try again."
 			render :new
