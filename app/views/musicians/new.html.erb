@@ -1,14 +1,14 @@
 <h1> NEW Musician </h1>
 <%= form_for @musician do |f| %>
 	<br/>
-	<b> <%= f.label(:instrument)%>
+	<b> <%= f.label(:instrument)%><br/>
 	<%= f.text_field(:instrument)%>
 	<br/>
 	<%= f.label(:genre)%><br/>
 	<%= f.text_field(:genre)%>
 	<br/>
 	<%= f.fields_for :address do |builder| %>
-    <%= render "address_fields", :f => builder %>
+    <%= render 'musician_address_fields', :f => builder %>
   <% end %>
 	<%= f.submit("Submit")%>
 <%end%>

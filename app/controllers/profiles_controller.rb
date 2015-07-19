@@ -18,7 +18,7 @@ before_action :find_profile, only: [:edit, :update, :show, :destroy]
 		@profile = Profile.new(profile_params)
 		if @profile.save
  			flash[:notice] = "Profile created!"
-			redirect_to profile_path(@profile.id)
+			redirect_to choose_profile_path
 		else
 		 	flash[:alert] = "Something went wrong. Please try again."
 			render :new
