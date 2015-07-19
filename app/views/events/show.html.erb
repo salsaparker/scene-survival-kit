@@ -1,10 +1,26 @@
-<h1><%= @event.event_name %></h1>
-<p><%= image_tag @event.image.url(:thumb) %></p>
-<h2><%= @event.event_desc %></h2>
-<h2><%= @event.event_date %></h2>
-<h2><%= @event.start_time %></h2>
+<section id="events_background">
+	<section class="container">
 
-<%= link_to("Back", events_path) %>
-<%= link_to("Edit", edit_event_path(@event.id)) %>
-<%= link_to("Delete", event_path(@event.id), method: :delete) %>
-<%= link_to("Add another event", new_event_path) %>
+	<div class="row">
+		<h1><%= @event.event_name %></h1>
+			<div id="microphone" class="col-md-7">
+			  <h2><%= image_tag @event.image.url(:medium) %></h2>
+				<div class="whitesmoke">
+					<h2><%= @event.event_date %> at <%= @event.start_time %></h2>
+					<p><%= @event.event_desc %></p>
+				</div>
+			</div>
+	</div>
+	<div class="row">
+		<a class="nav_tags"><%= link_to("Back", events_path) %></a>
+		<a class="nav_tags"><%= link_to("Edit", edit_event_path(@event.id)) %></a>
+		<a class="nav_tags"><%= link_to("Delete", event_path(@event.id), method: :delete) %></a>
+		<a class="nav_tags"><%= link_to("Add another event", new_event_path) %></a>
+	</div>
+
+		
+
+
+
+  </section>
+</section>

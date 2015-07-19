@@ -53,9 +53,14 @@ margin-left: 200px;
 
 /*====================================================*/
 
+#uber_background {
+  background-color: silver;
+}
+
 #events_background {
   background-color: black;
   color: silver;
+  padding: 20px;
 }
 
 #microphone {
@@ -64,6 +69,20 @@ margin-left: 200px;
   background-size: 100%;
 }
 
+#vector {
+  background-image: image-url('abstract.jpg');
+  repeat: no-repeat;
+  background-size: 100%;
+}
+
+.whitesmoke {
+  background-color: whitesmoke;
+  color: grey;
+}
+
+.nav_tags {
+  padding: 20px;
+}
 
 .calendar_grid {
   border: 2px solid gray;
