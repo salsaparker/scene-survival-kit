@@ -37,7 +37,7 @@ before_action :find_album, only: [:edit, :update, :show, :destroy]
 
   def destroy
     if @album.destroy
-      flash[:notice]= "Album destoyed!"
+      flash[:notice]= "Album destroyed!"
     else
       flash[:error]= "Something went wrong."
     end
@@ -48,9 +48,9 @@ before_action :find_album, only: [:edit, :update, :show, :destroy]
 
     def find_album
       @album = Album.find_by(params[:id])
-      unless @album
-        render status: 404
-      end
+      # unless @album
+      #   render status: 404
+      # end
     end
 
     def album_params
