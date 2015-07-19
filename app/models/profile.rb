@@ -6,6 +6,9 @@ class Profile < ActiveRecord::Base
   has_many :playlists, dependent: :destroy
   has_many :albums, dependent: :destroy
   has_many :photos, dependent: :destroy
+  accepts_nested_attributes_for :musicians, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :venue_reps, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :visual_artists, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
 
  	has_attached_file :image, styles: { large: "600x600>", 
 																				 medium: "300x300>", 
@@ -13,14 +16,14 @@ class Profile < ActiveRecord::Base
                                  # crops square at exactly ^ 150px
 																				 :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  validates :name, presence: true, uniqueness: {case_sensitive: false}
 
   def self.search(search)
   	if search
-  		where(["name LIKE ?", "%#{search}%"])
+  		where(["name LIKE ?", "%#{search.downcase}%"])
   	else
   		all
   	end
-  	
   end
 end
 # has_attached_file :goal_img, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
