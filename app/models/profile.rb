@@ -9,6 +9,7 @@ class Profile < ActiveRecord::Base
   accepts_nested_attributes_for :musicians, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :venue_reps, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :visual_artists, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :addresses, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
 
  	has_attached_file :image, styles: { large: "600x600>", 
 																				 medium: "300x300>", 
