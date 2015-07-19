@@ -1,9 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe PlaylistsController, type: :controller do
+RSpec.describe MusiciansController, type: :controller do
 
- let(:playlist) {Playlist.create(playlist_url: 'url')}
-
+let(:musician) {Musician.create(instrument: 'Harmonica')}
 
 	describe "GET #index" do
 		it "returns http success" do
@@ -14,18 +13,18 @@ RSpec.describe PlaylistsController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show, id: playlist.id
+      get :show, id: musician.id
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "POST #create" do
-    it "creates a new playlist successfully" do
-      post :create, playlist: {playlist_url: 'Test.url'}
+    it "creates a new musician successfully" do
+      post :create, musician: {instrument: 'banjo'}
       expect(response).to have_http_status(:redirect)
     end
-    # it 'does not create successfully' do
-    #   post :create, profile:{name: nil}
+    # it 'fails to create new address' do
+    #   post :create, address:{street: nil}
     #   expect(flash[:error]).to be_present
     #   expect(response).to render_template(:new)
     # end
@@ -39,30 +38,30 @@ RSpec.describe PlaylistsController, type: :controller do
   end
 
   describe "GET #edit" do
-    it "edits playlist successfully" do
-      get :edit, id: playlist.id
+    it "edits musician successfully" do
+      get :edit, id: musician.id
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "PUT #update" do
-    it "updates playlist successfully" do
-      put :update, id: playlist.id, playlist: {playlist_url: 'random.url'}
-      new_playlist = 'random.url'
-      updated_playlist = playlist.reload
-      expect(updated_playlist.playlist_url).to eq(new_playlist)
+    it "updates musician successfully" do
+      put :update, id: musician.id, musician: {instrument: 'harpsichord'}
+      new_musician = 'harpsichord'
+      updated_musician = musician.reload
+      expect(updated_musician.instrument).to eq(new_musician)
       expect(response).to have_http_status(:redirect)
     end
-    # it 'does not update successfully' do
-    #   put :update, id: profile.id, profile:{name: nil}
+    # it 'fails to update address' do
+    #   put :update, id: address.id, address: {street: nil}
     #   expect(flash[:error]).to be_present
     #   expect(response).to render_template(:edit)
-    # end
+    # end  
   end
 
   describe "DELETE #destroy" do
-    it "deletes playlist successfully" do
-      delete :destroy, id: playlist.id
+    it "deletes musician successfully" do
+      delete :destroy, id: musician.id
       expect(response).to have_http_status(:redirect)
     end
   end

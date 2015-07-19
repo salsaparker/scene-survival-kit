@@ -26,7 +26,7 @@ before_action :find_playlist, only: [:edit, :update, :show, :destroy]
   def update
     if @playlist.update(playlist_params)
       flash[:success]= "Playlist edited!"
-      redirect_to user_path(@playlist.user_id)
+      redirect_to profile_path(@playlist.profile_id)
     else
       flash[:error]= "Playlist failed to update"
       render :edit
@@ -48,7 +48,7 @@ before_action :find_playlist, only: [:edit, :update, :show, :destroy]
     end
 
     def playlist_params
-      params.require(:playlist).permit(:playlist_url)
+      params.require(:playlist).permit(:playlist_url, :profile_id, :user_id)
     end
 
 end
