@@ -13,14 +13,14 @@ class Profile < ActiveRecord::Base
                                  # crops square at exactly ^ 150px
 																				 :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  validates :name, presence: true, uniqueness: {case_sensitive: false}
 
   def self.search(search)
   	if search
-  		where(["name LIKE ?", "%#{search}%"])
+  		where(["name LIKE ?", "%#{search.downcase}%"])
   	else
   		all
   	end
-  	
   end
 end
 # has_attached_file :goal_img, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
