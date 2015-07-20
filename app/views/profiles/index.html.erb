@@ -1,5 +1,5 @@
 <div class="container">
-	<h1 class="text-center browse-header">Browse Profiles</h1>
+	<h1 class="text-center browse-header">Profiles</h1>
 			<% @profiles.each do |profile| %>
 				<p class="inline-block"><%= image_tag profile.image.url(:medium) %></br>
 				<%= link_to(profile.name, profile_path(profile.id)) %></p>

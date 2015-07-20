@@ -1,6 +1,7 @@
 <h1> NEW PROFILE </h1>
 <%= form_for @profile do |f| %>
 	<br/>
+	<b>I am a...</b><br/>
 	<b>Display Name:</b><br/>
 	<%= f.text_field(:name)%>
 	<br/>
@@ -16,3 +17,8 @@
 	<%= f.submit("Submit")%>
 <%end%>
 
+<!-- 		<select>
+		  <option>Musician</option>
+		  <option>Visual Artist</option>
+		  <option>Venue Representative</option>
+		</select><br/><br/> -->
