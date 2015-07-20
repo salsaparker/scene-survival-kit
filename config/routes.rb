@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :visual_artists
   resources :albums
   resources :photos
+  resources :messages
+  resources :replies
   
 
   # Example of regular route:
