@@ -1,7 +1,8 @@
 <h1>Profiles#index</h1>
 <p>Find me in app/views/profiles/index.html.erb</p>
 <ul>
-	<% @profiles.each do |profile| %> 
-		<li><%= profile.name %></li>
+	<% @profiles.each do |profile| %>
+		<li><%= image_tag profile.image.url(:thumb) %></li>
+		<li><%= link_to(profile.name, profile_path(profile.id)) %></li>
 	<% end %> 
 </ul>

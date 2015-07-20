@@ -80,10 +80,6 @@ margin-left: 200px;
   color: grey;
 }
 
-.nav_tags {
-  padding: 20px;
-}
-
 .calendar_grid {
   border: 2px solid gray;
   margin-bottom: 30px;
@@ -100,12 +96,12 @@ margin-left: 200px;
   }
   .notmonth, .notmonth a { color: white; }
   .month.today { 
-    background-color: cyan; 
+    background-color: lightblue; 
 }
 
   .month {
     a {
-      color: midnightblue;
+      color: navy;
     }
     a:hover {
       color: crimson;
@@ -127,6 +123,8 @@ margin-left: 200px;
       }
     }
   }
+
+
   /*!
    * Bootstrap v2.2.1
    *
@@ -352,4 +350,8 @@ margin-left: 200px;
     float: right;
   }
 
+}
+
+ul {
+  list-style-type: none;
 }
