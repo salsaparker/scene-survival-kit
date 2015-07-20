@@ -1,2 +1,15 @@
-<h1>Musicians#new</h1>
-<p>Find me in app/views/musicians/new.html.erb</p>
+<h1> NEW Musician </h1>
+<%= form_for @musician do |f| %>
+	<br/>
+	<b> <%= f.label(:instrument)%><br/>
+	<%= f.text_field(:instrument)%>
+	<br/>
+	<%= f.label(:genre)%><br/>
+	<%= f.text_field(:genre)%>
+	<br/>
+	<%= f.fields_for :address do |builder| %>
+    <%= render 'musician_address_fields', :f => builder %>
+  <% end %>
+	<%= f.submit("Submit")%>
+<%end%>
+
