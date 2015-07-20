@@ -17,6 +17,9 @@ gem 'font-awesome-sass'
 gem 'devise'
 
 
+group :development, :production do
+gem 'sendgrid'
+end
 
 
 group :development, :test do

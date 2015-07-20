@@ -18,3 +18,4 @@
 Gemfile.lock
 /coverage
 /config/amazon.yml
+/config/mailer.yml
