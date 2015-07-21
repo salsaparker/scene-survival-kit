@@ -11,7 +11,7 @@ class VisualArtistsController < ApplicationController
 
   def new
 		@visual_artist = VisualArtist.new
-		@visual_artist.address.build
+		@visual_artist.addresses.build
   end
 
 	def create

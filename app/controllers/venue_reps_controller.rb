@@ -12,7 +12,7 @@ before_action :find_venue_rep, only: [:edit, :show, :update, :destroy]
 
   def new
 		@venue_rep = VenueRep.new
-		@venue_rep.address.build
+		@venue_rep.addresses.build
   end
 
 	def create
