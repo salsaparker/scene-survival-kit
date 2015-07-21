@@ -1,5 +1,5 @@
 <%= link_to 'Back', new_search_path %>
-<% if @search.search_profile empty? %>
+<% if @search.search_profile.empty? %>
 	<p> No Records Found. </p>
 <% else %>
 	<% @search.search_profile.each do |profile|%>
