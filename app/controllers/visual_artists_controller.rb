@@ -19,6 +19,13 @@ class VisualArtistsController < ApplicationController
 		@visual_artist = VisualArtist.new(visual_artist_params)
 		@visual_artist.profile_id = @profile.id
 		if @visual_artist.save
+			address = Address.new(zip: params[:visual_artist][:addresses_attributes]['0'][:zip].to_i, 
+									street: params[:visual_artist][:addresses_attributes]['0'][:street],
+									city: params[:visual_artist][:addresses_attributes]['0'][:city],
+									state: params[:visual_artist][:addresses_attributes]['0'][:state],
+									visual_artist_id: @visual_artist.id
+									)
+			address.save
 			flash[:notice] = "New visual artist saved!"
 			redirect_to welcome_path
 		else
