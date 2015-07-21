@@ -53,7 +53,7 @@ private
 	end
 
 	def venue_rep_params
-		params.require(:venue_rep).permit(:profile_id, address_attributes: [:id, :street, :city, :state, :zip, :musician_id, :latitude, :longitude])
+		params.require(:venue_rep).permit(:profile_id, address_attributes: [:id, :street, :city, :state, :zip, :venue_rep_id, :latitude, :longitude])
 	end
 
 end
