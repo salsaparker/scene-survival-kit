@@ -1,7 +1,10 @@
 class MessagesController < ApplicationController
 before_action :find_message, only: [:show, :destroy]
+  
   def index
-    @messages = Message.find(:profile_id)
+    profile_id = current_user.profile.id
+    @messages = Message.my_messages(profile_id)
+    @sent_messages = Message.sent_messages(profile_id)
   end
 
   def sent
@@ -38,6 +41,6 @@ before_action :find_message, only: [:show, :destroy]
     end
 
     def message_params
-      params.require(:message).permit(:subject, :message_body, :message_sender_id, :message_receiver_id)
+      params.require(:message).permit(:subject, :message_body, :message_receiver_id)
     end
 end

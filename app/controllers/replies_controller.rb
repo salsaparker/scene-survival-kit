@@ -1,5 +1,5 @@
 class RepliesController < ApplicationController
-
+before_aciton :find_reply, only: [:destroy]
   def new 
     @reply = Reply.new
   end
@@ -21,7 +21,7 @@ class RepliesController < ApplicationController
 
   private
     def find_reply
-      @reply = Reply.find_by(:id params[:id])
+      @reply = Reply.find_by(id: params[:id])
     end
 
     def reply_params

@@ -1,8 +1,14 @@
 <h1>Inbox</h1>
-
-<%= @message_sender.name %>
+<hr />
+<h3 class= "text-center">Unread Messages</h3>
+<ul>
 <% @messages.each do |message| %>
-  <%= message.subject %>
-  <%= message.body %>
+<li><h4><%= link_to message.subject, message_path(message.id) %></h4></li>
   <% end %>
-  <%= link_to "Reply", new_reply_path %>
+</ul>
+  <hr />
+<h3 class= "text-center">Sent Messags</h3>
+<hr />
+<% @sent_messages.each do |sent| %>
+  <%= link_to sent.subject, message_path(sent.id) %>
+  <% end %>

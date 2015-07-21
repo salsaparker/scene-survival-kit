@@ -1,1 +1,5 @@
 show message
+
+<%= @message.subject %>
+<%= @message.body %>
+<%= link_to "Reply", new_reply_path()
