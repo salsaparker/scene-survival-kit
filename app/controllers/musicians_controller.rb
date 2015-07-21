@@ -13,7 +13,6 @@ before_action :find_musician, only: [:edit, :show, :update, :destroy]
 
   def new
 		@musician = Musician.new
-		address = @musician.addresses.build
   end
 
 	def create 
@@ -54,7 +53,7 @@ private
 	end
 
 	def musician_params
-		params.require(:musician).permit(:instrument, :genre, :profile_id, :created_at, :updated_at, address_attributes: [:id, :street, :city, :state, :zip, :musician_id, :latitude, :longitude, :created_at, :updated_at])
+		params.require(:musician).permit(:instrument, :genre, :profile_id, :created_at, :updated_at, addresses_attributes: [:id, :street, :city, :state, :zip, :musician_id, :latitude, :longitude])
 	end
 
 end
