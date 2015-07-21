@@ -17,7 +17,9 @@ before_action :find_musician, only: [:edit, :show, :update, :destroy]
   end
 
 	def create 
+		@profile = current_user.profile
 		@musician = Musician.new(musician_params)
+		@musician.profile_id = @profile.id
 		if @musician.save
 			flash[:notice] = "Musician created!"
 			redirect_to welcome_path
