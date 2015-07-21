@@ -154,13 +154,6 @@ ActiveRecord::Schema.define(version: 20150720214515) do
     t.integer  "visual_artist_id"
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string   "body"
-    t.string   "body_html"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
     t.string   "bio"
@@ -172,8 +165,6 @@ ActiveRecord::Schema.define(version: 20150720214515) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "body"
-    t.string   "body_html"
   end
 
   create_table "replies", force: :cascade do |t|

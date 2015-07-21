@@ -17,6 +17,9 @@ gem 'font-awesome-sass'
 gem 'devise'
 
 
+group :development, :production do
+gem 'sendgrid'
+end
 
 
 group :development, :test do
@@ -27,4 +30,6 @@ group :development, :test do
 	gem 'rspec-rails', '~> 3.0'
 	gem 'simplecov', :require => false
 	gem 'shoulda-matchers'
+	gem 'faker'
+	gem 'literate_randomizer'
 end
