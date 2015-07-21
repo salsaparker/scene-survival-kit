@@ -4,6 +4,6 @@ class Musician < ActiveRecord::Base
   has_many :photos, dependent: :destroy
   has_many :albums, dependent: :destroy
   has_many :addresses, dependent: :destroy
-  accepts_nested_attributes_for :address, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :addresses, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
 
 end
