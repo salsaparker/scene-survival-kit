@@ -13,6 +13,7 @@ before_action :find_musician, only: [:edit, :show, :update, :destroy]
 
   def new
 		@musician = Musician.new
+		@musician.addresses.build
   end
 
 	def create 
@@ -20,6 +21,13 @@ before_action :find_musician, only: [:edit, :show, :update, :destroy]
 		@musician = Musician.new(musician_params)
 		@musician.profile_id = @profile.id
 		if @musician.save
+			address = Address.new(zip: params[:musician][:addresses_attributes]['0'][:zip].to_i, 
+									street: params[:musician][:addresses_attributes]['0'][:street],
+									city: params[:musician][:addresses_attributes]['0'][:city],
+									state: params[:musician][:addresses_attributes]['0'][:state],
+									musician_id: @musician.id
+									)
+			address.save
 			flash[:notice] = "Musician created!"
 			redirect_to welcome_path
 		else
