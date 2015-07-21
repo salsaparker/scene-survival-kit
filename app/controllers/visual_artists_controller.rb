@@ -59,6 +59,6 @@ class VisualArtistsController < ApplicationController
 	end
 
 	def visual_artist_params
-		params.require(:visual_artist).permit(:medium, :profile_id, addresses_attributes: [:id, :street, :city, :state, :zip, :visual_artist_id, :latitude, :longitude, :created_at, :updated_at])
+		params.require(:visual_artist).permit(:medium, :profile_id, addresses_attributes: [:id, :street, :city, :state, :zip, :visual_artist_id, :latitude, :longitude])
 	end
 end
