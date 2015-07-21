@@ -7,16 +7,18 @@ Rails.application.routes.draw do
 
   root 'visitors#index'
 
+  resources :visual_artists 
+  resources :musicians
+  resources :venue_reps
+
   resources :addresses
   resources :events
-  resources :musicians
   resources :profiles
-  resources :venue_reps
   resources :playlists
   resources :venues
-  resources :visual_artists
   resources :albums
   resources :photos
+  resources :searches 
   
 
   # Example of regular route:
