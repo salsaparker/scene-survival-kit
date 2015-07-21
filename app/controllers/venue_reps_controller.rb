@@ -16,7 +16,9 @@ before_action :find_venue_rep, only: [:edit, :show, :update, :destroy]
   end
 
 	def create
+		@profile = current_user.profile
 		@venue_rep = VenueRep.new(venue_rep_params)
+		@venue_rep.profile_id = @profile.id
 		if @venue_rep.save
 			flash[:notice] = "Venue Representative Created!"
 			redirect_to welcome_path
