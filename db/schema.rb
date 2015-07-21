@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20150719221656) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
-    t.integer  "venue_id"`
+    t.integer  "venue_id"
     t.integer  "venue_rep_id"
     t.integer  "visual_artist_id"
     t.integer  "musician_id"
