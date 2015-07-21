@@ -1,1 +1,10 @@
-new message
+<h2>new message</h2>
+
+<div>
+<%= form_for @message do |f| %>
+<%= f.text_field(:subject) %>
+<%= f.text_area(:message_body) %>
+<%= f.hidden_field(:message_reciever_id) %>
+<%= f.submit 'Save' %>
+<% end %>
+</div>

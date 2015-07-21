@@ -13,14 +13,16 @@ before_action :find_musician, only: [:edit, :show, :update, :destroy]
 
   def new
 		@musician = Musician.new
-		@musician.address.build
+		address = @musician.addresses.build
   end
 
 	def create 
+		@profile = current_user.profile
 		@musician = Musician.new(musician_params)
+		@musician.profile_id = @profile.id
 		if @musician.save
 			flash[:notice] = "Musician created!"
-			redirect_to musicians_path
+			redirect_to welcome_path
 		else
 			flash[:alert] = "Something went wrong. Please try again."
 			render :new

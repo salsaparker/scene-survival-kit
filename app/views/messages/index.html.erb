@@ -1,0 +1,8 @@
+<h1>Inbox</h1>
+
+<%= @message_sender.name %>
+<% @messages.each do |message| %>
+  <%= message.subject %>
+  <%= message.body %>
+  <% end %>
+  <%= link_to "Reply", new_reply_path %>

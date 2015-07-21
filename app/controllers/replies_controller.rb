@@ -11,6 +11,7 @@ class RepliesController < ApplicationController
       redirect_to messages_path
     else
       flash[:error]= "Something went wrong!"
+      render :new
     end
   end
 
@@ -24,6 +25,6 @@ class RepliesController < ApplicationController
     end
 
     def reply_params
-      params.require(:reply).permit(:reply_body, :reply_sender_id, :reply_receiver_id)      
+      params.require(:reply).permit(:reply_body, :message_sender_id, :message_receiver_id)      
     end
 end

@@ -1,15 +1,15 @@
 class MessagesController < ApplicationController
-
-  def inbox
-    @inbox = Message.find_by(id: params[:id])
+before_action :find_message, only: [:show, :destroy]
+  def index
+    @messages = Message.find(:profile_id)
   end
 
   def sent
-    @sent = Message.find_by(id: params[:sender_id])  
+    @sent_messages = Message.find_by(id: params[:sender_id])  
   end
 
   def show
-    @message.replies
+    @replies = @message.replies
   end
 
   def new
@@ -17,7 +17,8 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.create(message_params)
+    @message = Message.new(message_params)
+    @message.message_sender_id = current_user.profile.id
     if @message.save
       flash[:success]= "Message sent!"
       redirect_to messages_path
@@ -30,7 +31,6 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
   end
-
 
   private
     def find_message

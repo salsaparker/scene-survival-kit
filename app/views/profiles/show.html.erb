@@ -4,7 +4,7 @@
 	<h1><%= @profile.name %></h1>
 	<p> Bio: <%= @profile.bio %></p>
 
-
+  <%= link_to("Message #{@profile.name}", new_message_path(message_reciever_id: @profile.id)) %>
 	<%= link_to("Back", profiles_path(@profile.id)) %>
 	<%= link_to("Edit", edit_profile_path(@profile.id)) %>
 	<%= link_to("Delete", profile_path(@profile.id), method: :delete) %>
