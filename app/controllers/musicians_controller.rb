@@ -1,6 +1,6 @@
 class MusiciansController < ApplicationController
 
-	layout 'logged_in'
+	layout 'logged_in', except: [:new, :create]
 	before_action :authenticate_user!
 	before_action :find_musician, only: [:edit, :show, :update, :destroy]
 

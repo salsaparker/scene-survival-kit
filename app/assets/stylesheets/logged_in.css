@@ -44,11 +44,11 @@
 
 /* Top Navigation */
 .dark-nav{
-    background-color: #10152e;
+    background-color: #0C1023;
 }
 .top-nav {
     padding: 0 15px;
-    background-color: #10152e;
+    background-color: #0C1023;
 }
 
 .top-nav>li {
@@ -60,7 +60,7 @@
     padding-top: 15px;
     padding-bottom: 15px;
     line-height: 20px;
-    color: #999;
+    color: #fff;
 }
 
 .top-nav>li>a:hover,
