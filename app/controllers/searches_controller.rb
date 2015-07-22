@@ -1,4 +1,7 @@
 class SearchesController < ApplicationController
+	layout 'logged_in'
+	before_action :authenticate_user!
+	
 	def new
 		@search = Search.new
 	end
