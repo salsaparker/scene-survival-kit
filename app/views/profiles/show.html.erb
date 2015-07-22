@@ -1,9 +1,8 @@
 <div class="image-centered container">
 
-	<p><%= image_tag @profile.image.url(:large) %></p>
-	<h1><%= @profile.name %></h1>
-	<p> Bio: <%= @profile.bio %></p>
-
+		<p><%= image_tag @profile.image.url(:large) %></p>
+		<h1><%= @profile.name %></h1>
+		<p> Bio: <%= @profile.bio %></p>
 
 	<%= link_to("Back", profiles_path(@profile.id)) %>
 	<%= link_to("Edit", edit_profile_path(@profile.id)) %>
