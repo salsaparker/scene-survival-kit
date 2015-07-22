@@ -1,5 +1,6 @@
 class VisualArtistsController < ApplicationController
-	# before_action :authenticate_user!
+	layout 'logged_in'
+	before_action :authenticate_user!
 	before_action :find_visual_artist, only: [:edit, :show, :update, :destroy]
 
   def index
