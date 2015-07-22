@@ -1,8 +1,8 @@
 class MusiciansController < ApplicationController
 
-
-# before_action :authenticate_user!
-before_action :find_musician, only: [:edit, :show, :update, :destroy]
+	layout 'logged_in'
+	before_action :authenticate_user!
+	before_action :find_musician, only: [:edit, :show, :update, :destroy]
 
   def index
 		@musicians = Musician.all
