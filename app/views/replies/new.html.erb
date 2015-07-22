@@ -1,0 +1,8 @@
+<h1 class= "text-center">New Reply</h1>
+<%= form_for @reply do |f| %>
+<div class= "text-center" id="new-reply-form">
+  <h3 id="reply-text-area"><%= f.text_area :reply_body, class: "input-lg", placeholder: "Type your reply here" %></h3>
+  <%= f.hidden_field :message_id, value: params[:message_id] %> 
+  <%= f.submit "Send", class: "btn btn-lg btn-warning" %> 
+  <% end %>
+</div>

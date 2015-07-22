@@ -7,10 +7,6 @@ before_action :find_message, only: [:show, :destroy]
     @sent_messages = Message.sent_messages(profile_id)
   end
 
-  def sent
-    @sent_messages = Message.find_by(id: params[:sender_id])  
-  end
-
   def show
     @replies = @message.replies
   end
