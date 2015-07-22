@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
-layout 'logged_in'
-before_action :authenticate_user!
-before_action :find_album, only: [:edit, :update, :show, :destroy]  
+  layout 'logged_in'
+  before_action :authenticate_user!
+  before_action :find_album, only: [:edit, :update, :show, :destroy]  
   def index
     @albums = Album.find_by(params[:profile_id])
   end

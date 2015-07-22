@@ -1,7 +1,7 @@
 class AddressesController < ApplicationController
-layout 'logged_in'
-before_action :authenticate_user!
-before_action :find_address, only: [:edit, :show, :update, :destroy]
+	layout 'logged_in'
+	before_action :authenticate_user!
+	before_action :find_address, only: [:edit, :show, :update, :destroy]
   
 	def index
 		@addresses = Address.all
