@@ -1,6 +1,6 @@
 class VenueRepsController < ApplicationController
 	
-	layout 'logged_in'
+	layout 'logged_in', except: [:new, :create]
 	before_action :authenticate_user!
 	before_action :find_venue_rep, only: [:edit, :show, :update, :destroy]
 
