@@ -4,7 +4,8 @@
 <%= form_for @message do |f| %>
 <h4><%= f.text_field :subject, class: "input-lg text-center", placeholder: "Subject" %></h4>
 <h4><%= f.text_area :message_body, class: "input-lg text-center", placeholder: "Type message here." %></h4>
-<%= f.hidden_field :message_receiver_id, value: params[:message_reciever_id] %>
+<%# raise 'the roof' %>
+<%= f.hidden_field :message_receiver_id, value: params[:message_receiver_id] %>
 <%= f.submit 'Send', class: "btn btn-warning btn-lg" %>
 <% end %>
 </div>

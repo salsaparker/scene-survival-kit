@@ -2,9 +2,6 @@ Rails.application.routes.draw do
 
   get 'pages/welcome', as: :welcome
   get 'pages/choose_profile', as: :choose_profile
-
-  # get '/replies/:id', to: 'replies#new', as: 'replies'
-  # post '/replies/:id', to: 'replies#create'
   
   devise_for :users, controllers: { registrations: "registrations" }
 

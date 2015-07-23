@@ -1,5 +1,6 @@
 class VisualArtistsController < ApplicationController
-	# before_action :authenticate_user!
+	layout 'logged_in'
+	before_action :authenticate_user!
 	before_action :find_visual_artist, only: [:edit, :show, :update, :destroy]
 
   def index
@@ -11,7 +12,7 @@ class VisualArtistsController < ApplicationController
 
   def new
 		@visual_artist = VisualArtist.new
-		@visual_artist.address.build
+		@visual_artist.addresses.build
   end
 
 	def create
@@ -19,6 +20,13 @@ class VisualArtistsController < ApplicationController
 		@visual_artist = VisualArtist.new(visual_artist_params)
 		@visual_artist.profile_id = @profile.id
 		if @visual_artist.save
+			address = Address.new(zip: params[:visual_artist][:addresses_attributes]['0'][:zip].to_i, 
+									street: params[:visual_artist][:addresses_attributes]['0'][:street],
+									city: params[:visual_artist][:addresses_attributes]['0'][:city],
+									state: params[:visual_artist][:addresses_attributes]['0'][:state],
+									visual_artist_id: @visual_artist.id
+									)
+			address.save
 			flash[:notice] = "New visual artist saved!"
 			redirect_to welcome_path
 		else
@@ -52,6 +60,6 @@ class VisualArtistsController < ApplicationController
 	end
 
 	def visual_artist_params
-		params.require(:visual_artist).permit(:medium, :profile_id)
+		params.require(:visual_artist).permit(:medium, :profile_id, addresses_attributes: [:id, :street, :city, :state, :zip, :visual_artist_id, :latitude, :longitude])
 	end
 end
