@@ -1,7 +1,7 @@
 class AddressesController < ApplicationController
-	layout 'logged_in'
-	before_action :authenticate_user!
-	before_action :find_address, only: [:edit, :show, :update, :destroy]
+
+# before_action :authenticate_user!
+before_action :find_address, only: [:edit, :show, :update, :destroy]
   
 	def index
 		@addresses = Address.all
@@ -15,11 +15,7 @@ class AddressesController < ApplicationController
   end
 
 	def create
-
 		@address = Address.new(address_params)
-		@musician = current_user.profile.musician
-		@address.musician_id = @musician.id
-		binding.pry
 		if @address.save
 			flash[:notice]= "Address created!"
 			redirect_to addresses_path

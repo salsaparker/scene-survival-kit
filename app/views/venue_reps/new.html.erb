@@ -1,6 +1,9 @@
 <h1> NEW Venue Rep </h1>
 <%= form_for @venue_rep do |f| %>
 	<br/>
+	<%= f.fields_for :address do |builder| %>
+    <%= render 'address_fields', :f => builder %>
+  <% end %>
 	<%= f.submit("Submit")%>
 <%end%>
 
