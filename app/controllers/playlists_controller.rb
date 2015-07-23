@@ -1,7 +1,5 @@
 class PlaylistsController < ApplicationController
-  layout 'logged_in'
-  before_action :authenticate_user!
-  before_action :find_playlist, only: [:edit, :update, :show, :destroy]  
+before_action :find_playlist, only: [:edit, :update, :show, :destroy]  
   
   def index
     @playlists = Playlist.all

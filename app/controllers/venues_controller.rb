@@ -1,8 +1,7 @@
 class VenuesController < ApplicationController
 
-  layout 'logged_in'
-  before_action :authenticate_user!
-  before_action :find_venue, only: [:edit, :update, :show, :destroy]
+# before_action :authenticate_user!
+before_action :find_venue, only: [:edit, :update, :show, :destroy]
 
   def index
     @venues = Venue.all 
