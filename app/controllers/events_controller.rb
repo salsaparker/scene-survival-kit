@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-
-	# before_action :authenticate_user!
+	layout 'logged_in'
+	before_action :authenticate_user!
 	before_action :find_event, only: [:edit, :update, :show, :destroy]
 
   def index

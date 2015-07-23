@@ -1,8 +1,8 @@
 class MusiciansController < ApplicationController
 
-
-# before_action :authenticate_user!
-before_action :find_musician, only: [:edit, :show, :update, :destroy]
+	layout 'logged_in', except: [:new, :create]
+	before_action :authenticate_user!
+	before_action :find_musician, only: [:edit, :show, :update, :destroy]
 
   def index
 		@musicians = Musician.all
@@ -13,14 +13,23 @@ before_action :find_musician, only: [:edit, :show, :update, :destroy]
 
   def new
 		@musician = Musician.new
-		@musician.address.build
+		@musician.addresses.build
   end
 
 	def create 
+		@profile = current_user.profile
 		@musician = Musician.new(musician_params)
+		@musician.profile_id = @profile.id
 		if @musician.save
+			address = Address.new(zip: params[:musician][:addresses_attributes]['0'][:zip].to_i, 
+									street: params[:musician][:addresses_attributes]['0'][:street],
+									city: params[:musician][:addresses_attributes]['0'][:city],
+									state: params[:musician][:addresses_attributes]['0'][:state],
+									musician_id: @musician.id
+									)
+			address.save
 			flash[:notice] = "Musician created!"
-			redirect_to musicians_path
+			redirect_to welcome_path
 		else
 			flash[:alert] = "Something went wrong. Please try again."
 			render :new
@@ -52,7 +61,7 @@ private
 	end
 
 	def musician_params
-		params.require(:musician).permit(:instrument, :genre, :profile_id, :created_at, :updated_at)
+		params.require(:musician).permit(:instrument, :genre, :profile_id, :created_at, :updated_at, addresses_attributes: [:id, :street, :city, :state, :zip, :musician_id, :latitude, :longitude])
 	end
 
 end

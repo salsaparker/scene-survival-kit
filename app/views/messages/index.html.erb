@@ -1,0 +1,21 @@
+<div id="wrapper">
+  <h1>Inbox</h1>
+  <hr />
+  <h3 class= "text-center">Unread Messages</h3>
+  <ul>
+    <% @unread.each do |unread| %>
+      <li><h4><%= link_to unread.subject, message_path(unread.id) %></h4></li>
+      <% end %>
+  </ul>
+  <hr />
+  <h3 class= "text-center">Read Messages</h3>
+  <hr />
+  <% @read.each do |read| %>
+    <li><h4><%= link_to read.subject, message_path(read.id) %></h4></li>
+    <% end %>
+  <h3 class="text-center">Sent Messages</h3>
+  <hr />
+    <% @sent_messages.each do |sent| %>
+    <li><h4><%= link_to sent.subject, message_path(sent.id) %></h4></li>
+    <% end %>
+</div>

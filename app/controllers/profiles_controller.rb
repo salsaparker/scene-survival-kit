@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
-
-# before_action :authenticate_user!
-before_action :find_profile, only: [:edit, :update, :show, :destroy]
+	layout 'logged_in', except: [:new, :create]
+	before_action :authenticate_user!, except: [:index]
+	before_action :find_profile, only: [:edit, :update, :show, :destroy]
 
   def index
 		@profiles = Profile.search(params[:search])
@@ -15,7 +15,9 @@ before_action :find_profile, only: [:edit, :update, :show, :destroy]
   end
 	
 	def create
+		@user = current_user
 		@profile = Profile.new(profile_params)
+		@profile.user_id = @user.id
 		if @profile.save
  			flash[:notice] = "Profile created!"
 			redirect_to choose_profile_path
@@ -46,7 +48,7 @@ before_action :find_profile, only: [:edit, :update, :show, :destroy]
 private
 
 	def find_profile
-		@profile = Profile.find_by_id(params[:id])
+		@profile = Profile.find_by(id: params[:id])
 	end
 
 	def profile_params

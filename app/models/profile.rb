@@ -6,6 +6,8 @@ class Profile < ActiveRecord::Base
   has_many :playlists, dependent: :destroy
   has_many :albums, dependent: :destroy
   has_many :photos, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :replies, dependent: :destroy
 
  	has_attached_file :image, styles: { large: "600x600!", 
 																				 medium: "300x300!", 
